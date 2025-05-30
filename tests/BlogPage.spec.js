@@ -1,10 +1,16 @@
-import {test, expect } from '@playwright/test'
+import { test, expect } from '@playwright/test'
+import BlogPage from '../pages/blogPage';
 
 test.describe("Blog Page", () => {
-test('Blog Post - Verify recent posts links and count the word', async ({ page }) => {
-    await page.goto('https://practice.sdetunicorns.com/blog/');
+ let blogPage; /** @type {BlogPage} */
+    
+    test.beforeEach(async ({ page }) => {
+        blogPage = new BlogPage(page);
+        await blogPage.navigate();
+        await expect(page).toHaveURL(/blog/);
+    });
 
-    await expect(page).toHaveURL(/blog/);
+test('Blog Post - Verify recent posts links and count the word', async ({ page }) => {
     // Click the button
     const menuNavLinks = await page.locator('#recent-posts-3 li')
     const count = await menuNavLinks.count()

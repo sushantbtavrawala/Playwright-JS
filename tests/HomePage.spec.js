@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import HomePage from '../pages/home.page';
+import HomePage from '../pages/homePage';
 
 test.describe("Home Page", () => {
     let homePage; /** @type {HomePage} */
@@ -7,7 +7,7 @@ test.describe("Home Page", () => {
     test.beforeEach(async ({ page }) => {
         homePage = new HomePage(page);
         await page.goto('https://practice.sdetunicorns.com/');
-      });
+    });
 
 test('Verify Home page has title', async ({ page }) => {
 

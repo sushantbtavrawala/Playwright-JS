@@ -1,4 +1,4 @@
-class HomePage {
+export default class HomePage {
     constructor(page) {
         this.page = page;
         this.getStartedBtn = page.locator('#get-started');
@@ -9,5 +9,3 @@ class HomePage {
         this.homePageTitle = "Practice E-Commerce Site – SDET Unicorns"
     }
 }
-
-export default HomePage;

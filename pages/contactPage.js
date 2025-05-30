@@ -1,4 +1,4 @@
-class ContactPage {
+export default class ContactPage {
     constructor(page) {
         this.page = page;
         this.firstName = page.locator('//*[@id="evf-277-field_ys0GeZISRs-1"]');
@@ -8,5 +8,3 @@ class ContactPage {
         this.confirmationMessage = page.locator('text="Thanks for contacting us! We will be in touch with you shortly"')
     }
 }
-
-export default ContactPage;
